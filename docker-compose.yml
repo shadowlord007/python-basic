@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  practice:
+    build:
+      context: .
+    volumes:
+      - ./practice:/app
+    command: python /app/main.py
+    environment:
+      - FLASK_ENV=development
+
+  # project2:
+  #   build:
+  #     context: .
+  #   volumes:
+  #     - ./project2:/app
+  #   command: python project2/main.py
+  #   environment:
+  #     - FLASK_ENV=development
+  #   ports:
+  #     - "5002:5000"
+
+  # project3:
+  #   build:
+  #     context: .
+  #   volumes:
+  #     - ./project3:/app
+  #   command: python project3/main.py
+  #   environment:
+  #     - FLASK_ENV=development
+  #   ports:
+  #     - "5003:5000"
