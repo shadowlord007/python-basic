@@ -9,7 +9,18 @@ services:
     command: python /app/main.py
     environment:
       - FLASK_ENV=development
-
+    depends_on:
+      - mongo
+  
+  mongo:
+    image: mongo:latest
+    volumes:
+      - mongodb_data:/data/db
+    ports:
+      - "27017:27017"
+      
+volumes:
+    mongodb_data:
   # project2:
   #   build:
   #     context: .
